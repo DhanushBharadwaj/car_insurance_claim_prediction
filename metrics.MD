@@ -50,3 +50,16 @@
 ### Caveats: 
 `Sometimes we will need well-calibrated probability outputs from our models and AUC doesn't help with that.`
 
+### Handling imbalanced Data
+
+#### 1 SMOTE(SyntheticMinorityOversamplingTechnique) — upsampling:-
+`It works based on the KNearestNeighbours algorithm, synthetically generating data points that fall in the proximity of the already existing outnumbered group. The input records should not contain any null values when applying this approach.`
+
+#### 2 DataDuplication — upsampling:- 
+`In this approach, the existing data points corresponding to the outvoted labels are randomly selected and duplicated.`
+
+#### 3 Downsampling 
+`Is a mechanism that reduces the count of training samples falling under the majority class. As it helps to even up the counts of target categories. By removing the collected data, we tend to lose so much valuable information`
+
+#### 4 Tomek(T-Links):-
+`T-Link is basically a pair of data points from different classes(nearest-neighbors). The objective is to drop the sample that corresponds to the majority and thereby minimalizing the count of the dominating label. This also increases the borderspace between the two labels and thus improving the performance accuracy.`
